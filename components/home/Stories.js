@@ -7,7 +7,7 @@ const Stories = () => {
     <View style={{ marginBottom: 13 }}>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {USERS.map((story, index) => (
-          <View key={index}>
+          <View key={index} style={{ alignItems: "center" }}>
             <Image style={styles.story} source={{ uri: story.image }} />
             <Text style={{ color: "white" }}>
               {" "}
@@ -18,7 +18,6 @@ const Stories = () => {
           </View>
         ))}
       </ScrollView>
-      <Text style={{ color: "white" }}>Stories</Text>
     </View>
   );
 };
