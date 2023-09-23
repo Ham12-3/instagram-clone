@@ -2,6 +2,9 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { Divider } from "@rneui/base";
 import { AntDesign } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 const postFooterIcons = [
   {
     name: "Like",
@@ -69,15 +72,23 @@ const PostFooter = () => (
         size={24}
         color="black"
       />
-      <AntDesign
-        style={styles.footerIcon}
-        name="hearto"
+      <Ionicons
+        name="chatbubble-outline"
         size={24}
         color="black"
-      />
-      <AntDesign
         style={styles.footerIcon}
-        name="hearto"
+      />
+      <FontAwesome
+        name="send-o"
+        size={24}
+        color="black"
+        style={styles.footerIcon}
+      />
+    </View>
+    <View style={{ flex: 1, alignItems: "flex-end" }}>
+      <Feather
+        style={styles.footerIcon}
+        name="bookmark"
         size={24}
         color="black"
       />
