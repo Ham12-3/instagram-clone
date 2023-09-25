@@ -40,6 +40,7 @@ const Post = ({ post }) => {
       <PostImage post={post} />
       <View style={{ marginHorizontal: 15, marginTop: 10 }}>
         <PostFooter />
+        <Likes post={post} />
       </View>
     </View>
   );
@@ -114,6 +115,11 @@ const PostImage = ({ post }) => (
       source={{ uri: post.imageUrl }}
       style={{ height: "100%", resizeMode: "cover" }}
     />
+  </View>
+);
+const Likes = ({ post }) => (
+  <View>
+    <Text style={{ color: "white" }}> {post.likes.toLocaleString("en")}</Text>
   </View>
 );
 
