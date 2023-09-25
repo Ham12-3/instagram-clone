@@ -41,6 +41,8 @@ const Post = ({ post }) => {
       <View style={{ marginHorizontal: 15, marginTop: 10 }}>
         <PostFooter />
         <Likes post={post} />
+        <Caption post={post} />
+        <CommentSection post={post} />
       </View>
     </View>
   );
@@ -118,11 +120,26 @@ const PostImage = ({ post }) => (
   </View>
 );
 const Likes = ({ post }) => (
-  <View>
-    <Text style={{ color: "white" }}> {post.likes.toLocaleString("en")}</Text>
+  <View style={{ flexDirection: "row", marginTop: 4 }}>
+    <Text style={{ color: "white", fontWeight: "600" }}>
+      {" "}
+      {post.likes.toLocaleString("en")} likes
+    </Text>
   </View>
 );
 
+const Caption = ({ post }) => (
+  <View style={{ marginTop: 5 }}>
+    <Text style={{ color: "white" }}>
+      <Text style={{ fontWeight: "600" }}>{post.user}</Text>
+      <Text style={{ marginLeft: 5 }}>
+        {" "}
+        {"  "} {post.caption}{" "}
+      </Text>
+    </Text>
+  </View>
+);
+const CommentSection = ({ post }) => <Text style={{ color: "gray" }}>HI</Text>;
 const styles = StyleSheet.create({
   story: {
     width: 35,
